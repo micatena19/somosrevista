@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMOS - La revista local</title>
+
+    <!-- Google Fonts: Glacial Indifference (vía Montserrat/Inter fallback) y Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Netlify Identity Widget para el inicio de sesión del Panel Privado -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #f8f8f8;
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-border: #e2e2e2;
+            --gray-text: #555555;
+            --font-logo: 'Montserrat', 'Inter', sans-serif;
+            --font-italic: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--black);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* BOTONES EDITORIALES */
+        .btn {
+            display: inline-block;
+            padding: 12px 26px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-black {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .btn-black:hover {
+            background-color: #2b2b2b;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--black);
+            color: var(--black);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-border);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .logo-nav h1 {
+            font-family: var(--font-logo);
+            font-size: 1.9rem;
+            font-weight: 700;
+            text-transform: lowercase;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .logo-nav span {
+            font-family: var(--font-italic);
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* HERO / PORTADA */
+        .hero {
+            background-color: var(--white);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-family: var(--font-logo);
+            font-size: 6.5rem;
+            font-weight: 700;
+            text-transform: lowercase;
+            line-height: 0.85;
+            letter-spacing: -3px;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-italic);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--black);
+        }
+
+        .hero-description {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            max-width: 440px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        /* EDICIONES */
+        .ediciones-archivo {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: var(--font-logo);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            font-weight: bold;
+        }
+
+        .divider {
+            width: 35px;
+            height: 2px;
+            background: var(--black);
+            margin: 10px 0 15px 0;
+        }
+
+        .ediciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card-edicion {
+            background-color: var(--white);
+            border: 1px solid var(--gray-border);
+            padding: 20px;
+        }
+
+        .card-edicion-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .card-edicion-top h4 {
+            font-family: var(--font-logo);
+            font-size: 1.5rem;
+            text-transform: lowercase;
+        }
+
+        .card-edicion-top span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .card-edicion .tagline {
+            font-family: var(--font-italic);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .card-edicion img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* NOTAS INDIVIDUALES */
+        .notas-section {
+            padding: 70px 0;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .notas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .nota-card {
+            border: 1px solid var(--gray-border);
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .nota-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .nota-content {
+            padding: 20px;
+        }
+
+        .nota-cat {
+            font-size: 0.65rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .nota-title {
+            font-family: var(--font-logo);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .nota-link {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* PARTICIPÁ Y SOBRE SOMOS */
+        .info-duo {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .duo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .duo-box {
+            padding: 45px;
+            border: 1px solid var(--gray-border);
+        }
+
+        .duo-box.dark {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .duo-box.light {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        .duo-box h3 {
+            font-family: var(--font-logo);
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .duo-box p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        @media (max-width: 850px) {
+            .hero-grid, .duo-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 4.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo-nav">
+                <h1>somos</h1>
+                <span>La revista local</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ediciones">Ediciones</a></li>
+                <li><a href="#notas">Noticias</a></li>
+                <li><a href="#participa">Participá</a></li>
+                <li><a href="#nosotros">Sobre SOMOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div>
+                <h1 class="hero-title">somos</h1>
+                <div class="hero-subtitle">La revista local</div>
+                <p class="hero-description">Historias, personas, emprendimientos, recuerdos y todo eso que forma parte de nuestros pueblos.</p>
+                <div class="hero-buttons">
+                    <a href="#ediciones" class="btn btn-black">Ver Ediciones</a>
+                    <a href="#participa" class="btn btn-outline">Participá</a>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80" alt="Fotografía SOMOS">
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHIVO DE EDICIONES -->
+    <section class="ediciones-archivo" id="ediciones">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestras Ediciones</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="ediciones-grid">
+                
+                <article class="card-edicion">
+                    <div class="card-edicion-top">
+                        <h4>somos</h4>
+                        <span>#02 · Agosto 2026</span>
+                    </div>
+                    <div class="tagline">La revista local</div>
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Edición 02">
+                    <a href="#" class="btn btn-black" style="display:block; text-align:center;">Leer Edición →</a>
+                </article>
+
+                <article class="card-edicion">
+                    <div class="card-edicion-top">
+                        <h4>somos</h4>
+                        <span>#01 · Junio 2026</span>
+                    </div>
+                    <div class="tagline">La revista local</div>
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Edición 01">
+                    <a href="#" class="btn btn-black" style="display:block; text-align:center;">Leer Edición →</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICIAS / NOTAS -->
+    <section class="notas-section" id="notas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Últimas Noticias</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="notas-grid">
+
+                <article class="nota-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Noticia">
+                    <div class="nota-content">
+                        <div class="nota-cat">Emprendimientos</div>
+                        <h3 class="nota-title">Lavadero El 22</h3>
+                        <a href="#" class="nota-link">Leer nota →</a>
+                    </div>
+                </article>
+
+                <article class="nota-card">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Noticia">
+                    <div class="nota-content">
+                        <div class="nota-cat">Comunidad</div>
+                        <h3 class="nota-title">Club Deportivo Carboni</h3>
+                        <a href="#" class="nota-link">Leer nota →</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMACIÓN DE CONTACTO Y SOBRE SOMOS -->
+    <section class="info-duo">
+        <div class="container duo-grid">
+            
+            <div class="duo-box dark" id="participa">
+                <h3>PARTICIPÁ</h3>
+                <p>¿Tenés una historia, foto, recuerdo, evento o idea para SOMOS? Queremos que seas parte de la revista de nuestros pueblos.</p>
+                <a href="mailto:contacto@somosrevista.com" class="btn btn-outline" style="border-color: #fff; color: #fff;">Enviar propuesta</a>
+            </div>
+
+            <div class="duo-box light" id="nosotros">
+                <h3>SOBRE SOMOS</h3>
+                <p>Una revista hecha desde nuestra zona, para mostrar lo que muchas veces no se ve, pero nos define como comunidad. Recuperamos la memoria local y el valor de nuestra gente.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            SOMOS • LA REVISTA LOCAL • HECHA POR Y PARA NUESTRA ZONA
+        </div>
+    </footer>
+
+    <!-- Script de Redirección de Inicio de Sesión de Administración -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
