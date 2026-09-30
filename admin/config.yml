@@ -2,7 +2,7 @@ backend:
   name: github
   repo: micatena19/somosrevista
   branch: main
-  app_id: TU_CLIENT_ID_AQUI
+  app_id: Ov23liXgGR1OFKgDNvYV
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
