@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: micatena19/somosrevista
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Noticias"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Imagen de Portada", name: "thumbnail", widget: "image"}
+      - {label: "Categoría", name: "category", widget: "string"}
+      - {label: "Contenido de la Noticia", name: "body", widget: "markdown"}
+      
