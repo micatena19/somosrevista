@@ -3,6 +3,7 @@ backend:
   repo: micatena19/somosrevista
   branch: main
   app_id: Ov23liXgGR1OFKgDNvYV
+  base_url: https://slauson.decapcms.org
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
