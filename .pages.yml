@@ -56,3 +56,19 @@ content:
           - name: texto
             label: Texto de la nota (dejá una línea en blanco entre párrafos)
             type: text
+
+  - name: portada
+    label: Fotos del inicio (carrusel)
+    type: file
+    path: data/portada.json
+    format: json
+    list: true
+    fields:
+      - name: imagen
+        label: Foto (conviene que sea horizontal)
+        type: image
+        options:
+          media: imagenes
+      - name: descripcion
+        label: Descripción corta (para accesibilidad y Google)
+        type: string
