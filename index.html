@@ -121,7 +121,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
   const imgs = [...box.querySelectorAll('img')], dots = [...box.querySelectorAll('.dots button')];
   let i = 0, t;
   const ir = n => { i = (n + imgs.length) % imgs.length; imgs.forEach((im, k) => im.classList.toggle('on', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i)); };
-  const auto = () => { clearInterval(t); t = setInterval(() => ir(i + 1), 5000); };
+  const auto = () => { clearInterval(t); t = setInterval(() => ir(i + 1), 3000); };
   box.querySelector('.prev').onclick = () => { ir(i - 1); auto(); };
   box.querySelector('.next').onclick = () => { ir(i + 1); auto(); };
   dots.forEach((d, k) => d.onclick = () => { ir(k); auto(); });
