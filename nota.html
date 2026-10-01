@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOMOS - La revista local</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <div class="container nav-content">
+    <div class="logo-nav"><h1>somos</h1><span>La revista local</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#ediciones">Ediciones</a></li>
+      <li><a href="index.html#participa">Participá</a></li>
+      <li><a href="index.html#nosotros">Sobre SOMOS</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="nota-pagina" id="nota"><p>Cargando nota…</p></main>
+<footer><div class="container">SOMOS • LA REVISTA LOCAL • HECHA POR Y PARA NUESTRA ZONA</div></footer>
+<script>
+const slug = s => String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const q = k => new URLSearchParams(location.search).get(k);
+const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.now())).json());
+(async () => {
+  const el = document.getElementById('nota');
+  const back = 'edicion.html?e=' + encodeURIComponent(q('e') || '');
+  try {
+    const e = (await cargar()).find(x => String(x.numero) === q('e'));
+    const n = (e.notas || []).find(x => slug(x.titulo) === q('n'));
+    if (!n) throw 0;
+    document.title = n.titulo + ' · SOMOS';
+    const parrafos = String(n.texto || '').split(/\n\s*\n/).map(p => '<p>' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>').join('');
+    el.innerHTML = (n.imagen ? `<img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">` : '') +
+      `<div class="nota-cat">${esc(n.categoria)} · Edición #${esc(e.numero)}</div><h1>${esc(n.titulo)}</h1>${parrafos}` +
+      `<a href="${back}" class="btn btn-outline volver">← Volver a la edición</a>`;
+  } catch (err) {
+    el.innerHTML = `<p>No encontramos esa nota.</p><a href="${back}" class="btn btn-outline volver">← Volver</a>`;
+  }
+})();
+</script>
+</body>
+</html>
