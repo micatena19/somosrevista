@@ -116,7 +116,7 @@
             font-size: 1.9rem;
             font-weight: 700;
             text-transform: lowercase;
-            letter-spacing: -1px;
+            letter-spacing: -3px; /* Interletrado pegado */
             line-height: 1;
         }
 
@@ -159,7 +159,7 @@
             font-weight: 700;
             text-transform: lowercase;
             line-height: 0.85;
-            letter-spacing: -3px;
+            letter-spacing: -8px; /* Interletrado muy pegado (-97 aprox) */
             margin-bottom: 10px;
         }
 
@@ -241,6 +241,7 @@
             font-family: var(--font-logo);
             font-size: 1.5rem;
             text-transform: lowercase;
+            letter-spacing: -2px; /* Interletrado pegado */
         }
 
         .card-edicion-top span {
@@ -349,6 +350,7 @@
             font-size: 2rem;
             text-transform: uppercase;
             margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
         .duo-box p {
@@ -374,6 +376,7 @@
             }
             .hero-title {
                 font-size: 4.5rem;
+                letter-spacing: -5px;
             }
             .nav-links {
                 display: none;
@@ -489,22 +492,28 @@
             <div class="duo-box dark" id="participa">
                 <h3>PARTICIPÁ</h3>
                 <p>¿Tenés una historia, foto, recuerdo, evento o idea para SOMOS? Queremos que seas parte de la revista de nuestros pueblos.</p>
+                
                 <div class="contacto-propuestas">
-  <h3>Enviar tu propuesta</h3>
-  <p>Elegí por dónde querés contactarnos:</p>
-  
-  <a href="https://wa.me/5492227482381?text=Hola%20Micaela,%20quiero%20enviar%20una%20propuesta" class="btn btn-outline" target="_blank">
-    WhatsApp Micaela
-  </a>
+                    <p style="margin-bottom: 15px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Elegí por dónde querés contactarnos:</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px;">
+                        <a href="https://wa.me/5492227482381?text=Hola%20Micaela,%20quiero%20enviar%20una%20propuesta" target="_blank" style="background-color: #ffffff; color: #0a0a0a; padding: 12px 18px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #ffffff;">
+                            <span>WhatsApp Micaela</span>
+                            <span style="color: #25d366; font-size: 1rem;">→</span>
+                        </a>
 
-  <a href="https://wa.me/5492227471621?text=Hola%20Bárbara,%20quiero%20enviar%20una%20propuesta" class="btn btn-outline" target="_blank">
-    WhatsApp Bárbara
-  </a>
+                        <a href="https://wa.me/5492227471621?text=Hola%20Bárbara,%20quiero%20enviar%20una%20propuesta" target="_blank" style="background-color: #ffffff; color: #0a0a0a; padding: 12px 18px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #ffffff;">
+                            <span>WhatsApp Bárbara</span>
+                            <span style="color: #25d366; font-size: 1rem;">→</span>
+                        </a>
 
-  <a href="https://instagram.com/somosrevistta" class="btn btn-outline" target="_blank">
-    Instagram @somosrevistta
-  </a>
-</div>
+                        <a href="https://instagram.com/somosrevistta" target="_blank" style="background-color: #ffffff; color: #0a0a0a; padding: 12px 18px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #ffffff;">
+                            <span>Instagram @somosrevistta</span>
+                            <span style="color: #e1306c; font-size: 1rem;">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <div class="duo-box light" id="nosotros">
                 <h3>SOBRE SOMOS</h3>
