@@ -1,30 +1,34 @@
 [
   {
     "numero": "01",
-    "fecha": "Junio 2026",
-    "portada": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
-    "archivo": "",
-    "enlace": "",
-    "notas": []
+    "fecha": "Junio 2026"
   },
   {
     "numero": "02",
     "fecha": "Agosto 2026",
-    "portada": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80",
-    "archivo": "",
-    "enlace": "",
     "notas": [
       {
         "titulo": "Lavadero El 22",
         "categoria": "Emprendimientos",
-        "imagen": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
         "texto": "Acá va el texto de la nota. Escribilo desde el panel de control."
       },
       {
         "titulo": "Club Deportivo Carboni",
         "categoria": "Comunidad",
-        "imagen": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80",
         "texto": "Acá va el texto de la nota. Escribilo desde el panel de control."
+      }
+    ]
+  },
+  {
+    "numero": "03",
+    "fecha": "Octubre 2026",
+    "portada": "/somosrevista/images/1000758648_0dcbc81696a2c940f3dd45dd17e62972-23_6_2026, 11_33_22_20260926_110147_0000.png",
+    "notas": [
+      {
+        "titulo": "La gran lechonada",
+        "categoria": "Comunidad",
+        "imagen": "/somosrevista/images/IMG-20260918-WA0127.jpg",
+        "texto": "La Lechonada: una fiesta de todos\n\nLa Lechonada nació con la idea de recuperar una celebración que acompañara el aniversario de Antonio Carboni. La fiesta tuvo sus primeras ediciones en 2010 y 2016, y el año pasado, desde el Club Social, Deportivo y Cultural Antonio Carboni, se decidió volver a convocar a las instituciones de la localidad.\n\nEl objetivo es que sea una verdadera fiesta popular, donde puedan participar vecinos, instituciones, productores, comerciantes, artesanos y emprendedores, y que con el tiempo se convierta en una fiesta que identifique a Carboni.\n\nEste año habrá un acto por el aniversario, desfile de instituciones, propuestas gastronómicas, paseo de compras, visitas guiadas a la Parroquia La Sagrada Familia y al histórico reloj francés de su torre.\n\nTambién habrá peñas folklóricas, música, sorteos y diferentes espectáculos, con Los Charros como cierre.\n\nLa Lechonada representa una oportunidad para reencontrarse, compartir y mostrar todo lo que tiene para ofrecer nuestra comunidad. Su realización es posible gracias al trabajo conjunto de las instituciones, el Municipio, sponsors, vecinos y productores locales.\n\nFuente: Darío Gutiérrez."
       }
     ]
   }
