@@ -17,6 +17,7 @@
     <ul class="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#ediciones">Ediciones</a></li>
+      <li><a href="#clima">Estación</a></li>
       <li><a href="#participa">Participá</a></li>
       <li><a href="#nosotros">Sobre SOMOS</a></li>
     </ul>
@@ -48,6 +49,18 @@
   </div>
 </section>
 
+<section class="notas-section" id="clima">
+  <div class="container clima-grid">
+    <div>
+      <h2 class="section-title">Estación meteorológica</h2>
+      <div class="divider"></div>
+      <p class="hero-description">Consultá los datos en vivo de la estación meteorológica de la Escuela Agropecuaria N°1 de Antonio Carboni.</p>
+      <a href="https://www.agroclima.com/public/estacion.php?id=1555" target="_blank" rel="noopener" class="btn btn-black">Ver estación en vivo →</a>
+    </div>
+    <div class="qr-box"><div id="qr"></div><span>Escaneá con el celular</span></div>
+  </div>
+</section>
+
 <section class="info-duo">
   <div class="container duo-grid">
     <div class="duo-box dark" id="participa">
@@ -69,7 +82,10 @@
 
 <footer><div class="container">SOMOS • LA REVISTA LOCAL • HECHA POR Y PARA NUESTRA ZONA</div></footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
+const ESTACION_URL = "https://www.agroclima.com/public/estacion.php?id=1555";
+if (window.QRCode) new QRCode(document.getElementById("qr"), {text: ESTACION_URL, width: 170, height: 170, colorDark: "#0a0a0a", colorLight: "#ffffff"});
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 (async () => {
   let ed = [];
