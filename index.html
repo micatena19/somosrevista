@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOMOS - La revista local</title>
+<title>SOMOS - Revista local de Antonio Carboni y la zona</title>
+<meta name="description" content="SOMOS es la revista local con historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.">
+<link rel="canonical" href="https://micatena19.github.io/somosrevista/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="SOMOS - La revista local">
+<meta property="og:title" content="SOMOS - La revista local">
+<meta property="og:description" content="SOMOS es la revista local con historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.">
+<meta property="og:url" content="https://micatena19.github.io/somosrevista/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,9 +43,7 @@
         <a href="#participa" class="btn btn-outline">Participá</a>
       </div>
     </div>
-    <div class="hero-img-container">
-      <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80" alt="Fotografía SOMOS">
-    </div>
+    <div class="hero-img-container"><div class="slider" id="slider"><img class="on" src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80" alt="Fotografía SOMOS"></div></div>
   </div>
 </section>
 
@@ -97,6 +103,29 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
       <img src="${esc(e.portada)}" alt="Edición ${esc(e.numero)}">
       <a href="edicion.html?e=${encodeURIComponent(e.numero)}" class="btn btn-black" style="display:block;text-align:center">Leer Edición →</a>
     </article>`).join('') || '<p class="vacio">Pronto vas a poder leer nuestras ediciones.</p>';
+})();
+</script>
+<script>
+(async () => {
+  const box = document.getElementById('slider');
+  let fotos = [];
+  try { fotos = await (await fetch('data/portada.json?v=' + Date.now())).json(); } catch (e) {}
+  fotos = fotos.filter(f => f.imagen);
+  if (!fotos.length) return;
+  box.innerHTML = fotos.map((f, i) => `<img class="${i ? '' : 'on'}" src="${esc(f.imagen)}" alt="${esc(f.descripcion || 'Fotografía SOMOS')}">`).join('');
+  if (fotos.length < 2) return;
+  box.insertAdjacentHTML('beforeend', '<button class="slider-btn prev" aria-label="Anterior">‹</button><button class="slider-btn next" aria-label="Siguiente">›</button><div class="dots">' + fotos.map((_, i) => `<button aria-label="Foto ${i + 1}"></button>`).join('') + '</div>');
+  const imgs = [...box.querySelectorAll('img')], dots = [...box.querySelectorAll('.dots button')];
+  let i = 0, t;
+  const ir = n => { i = (n + imgs.length) % imgs.length; imgs.forEach((im, k) => im.classList.toggle('on', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i)); };
+  const auto = () => { clearInterval(t); t = setInterval(() => ir(i + 1), 5000); };
+  box.querySelector('.prev').onclick = () => { ir(i - 1); auto(); };
+  box.querySelector('.next').onclick = () => { ir(i + 1); auto(); };
+  dots.forEach((d, k) => d.onclick = () => { ir(k); auto(); });
+  let x0 = 0;
+  box.addEventListener('touchstart', e => x0 = e.touches[0].clientX, {passive: true});
+  box.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { ir(i + (dx < 0 ? 1 : -1)); auto(); } });
+  ir(0); auto();
 })();
 </script>
 </body>
