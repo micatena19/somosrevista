@@ -1,0 +1,61 @@
+media:
+  - name: imagenes
+    label: Imágenes
+    input: images
+    output: /somosrevista/images
+    categories: [image]
+  - name: pdfs
+    label: Ediciones en PDF
+    input: pdf
+    output: /somosrevista/pdf
+    categories: [document]
+
+content:
+  - name: ediciones
+    label: Ediciones
+    type: file
+    path: data/ediciones.json
+    format: json
+    list: true
+    fields:
+      - name: numero
+        label: Número (ej. 03)
+        type: string
+      - name: fecha
+        label: Mes y año (ej. Octubre 2026)
+        type: string
+      - name: portada
+        label: Portada
+        type: image
+        options:
+          media: imagenes
+      - name: archivo
+        label: PDF de la edición
+        type: file
+        options:
+          media: pdfs
+      - name: enlace
+        label: O pegá un link externo (opcional)
+        type: string
+
+  - name: noticias
+    label: Noticias
+    type: file
+    path: data/noticias.json
+    format: json
+    list: true
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: categoria
+        label: Categoría (ej. Comunidad)
+        type: string
+      - name: imagen
+        label: Foto
+        type: image
+        options:
+          media: imagenes
+      - name: enlace
+        label: Link de la nota (opcional)
+        type: string
