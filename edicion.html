@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOMOS - La revista local</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <div class="container nav-content">
+    <div class="logo-nav"><h1>somos</h1><span>La revista local</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#ediciones">Ediciones</a></li>
+      <li><a href="index.html#participa">Participá</a></li>
+      <li><a href="index.html#nosotros">Sobre SOMOS</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="ediciones-archivo">
+  <div class="container" id="edicion"><p>Cargando…</p></div>
+</section>
+<footer><div class="container">SOMOS • LA REVISTA LOCAL • HECHA POR Y PARA NUESTRA ZONA</div></footer>
+<script>
+const slug = s => String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const q = k => new URLSearchParams(location.search).get(k);
+const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.now())).json());
+(async () => {
+  const el = document.getElementById('edicion');
+  try {
+    const e = (await cargar()).find(x => String(x.numero) === q('e'));
+    if (!e) throw 0;
+    document.title = 'Edición ' + e.numero + ' · SOMOS';
+    const pdf = e.archivo || e.enlace;
+    const notas = (e.notas || []).map(n => `
+      <article class="nota-card">
+        <img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">
+        <div class="nota-content">
+          <div class="nota-cat">${esc(n.categoria)}</div>
+          <h3 class="nota-title">${esc(n.titulo)}</h3>
+          <a href="nota.html?e=${encodeURIComponent(e.numero)}&n=${slug(n.titulo)}" class="btn btn-black">Leer ahora</a>
+        </div>
+      </article>`).join('');
+    el.innerHTML = `
+      <div class="edicion-head">
+        <img src="${esc(e.portada)}" alt="Edición ${esc(e.numero)}">
+        <div>
+          <h2 class="section-title">Edición #${esc(e.numero)}</h2>
+          <div class="divider"></div>
+          <p class="hero-description">${esc(e.fecha)} · La revista local</p>
+          ${pdf ? `<a href="${esc(pdf)}" target="_blank" rel="noopener" class="btn btn-outline">Ver revista completa (PDF)</a>` : ''}
+        </div>
+      </div>
+      <div class="section-header"><h2 class="section-title">En esta edición</h2><div class="divider"></div></div>
+      <div class="notas-grid">${notas || '<p class="vacio">Pronto vas a poder leer las notas de esta edición.</p>'}</div>`;
+  } catch (err) {
+    el.innerHTML = '<p>No encontramos esa edición.</p><a href="index.html#ediciones" class="btn btn-outline volver">← Volver</a>';
+  }
+})();
+</script>
+</body>
+</html>
