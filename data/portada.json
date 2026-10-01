@@ -1,6 +1,11 @@
 [
   {
-    "imagen": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80",
     "descripcion": "Fotografía SOMOS"
+  },
+  {
+    "imagen": "/somosrevista/images/Screenshot_20260930_163128_Instagram.jpg"
+  },
+  {
+    "imagen": "/somosrevista/images/Screenshot_20261001_144125_Instagram.jpg"
   }
 ]
