@@ -1,7 +1,8 @@
 [
   {
     "numero": "01",
-    "fecha": "Junio 2026"
+    "fecha": "Junio 2026",
+    "portada": "/somosrevista/images/Screenshot_20261001_153714_Gallery.jpg"
   },
   {
     "numero": "02",
@@ -23,7 +24,6 @@
   {
     "numero": "03",
     "fecha": "Octubre 2026",
-    "portada": "/somosrevista/images/1000758648_0dcbc81696a2c940f3dd45dd17e62972-23_6_2026, 11_33_22_20260926_110147_0000.png",
     "notas": [
       {
         "titulo": "La gran lechonada",
