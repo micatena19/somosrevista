@@ -2,7 +2,14 @@
   {
     "numero": "01",
     "fecha": "Junio 2026",
-    "portada": "/somosrevista/images/Screenshot_20261001_153714_Gallery.jpg"
+    "portada": "/somosrevista/images/Screenshot_20261001_153714_Gallery.jpg",
+    "notas": [
+      {
+        "titulo": "Somos parte.",
+        "imagen": "/somosrevista/images/Screenshot_20261001_154450_Canva.jpg",
+        "texto": "Este proyecto nació en la Escuela\r\nSecundaria Agropecuaria de Antonio\r\nCarboni como nuestro trabajo final de\r\núltimo año. Somos Bárbara y Micaela,\r\ndos alumnas que junto al\r\nacompañamiento de nuestro profesor\r\nLuis Aguilera, buscamos crear una\r\npropuesta que represente nuestros\r\nintereses y que, al mismo tiempo\r\naporte algo a la comunidad.\n\r\nDespués de explorar distintas ideas,\r\ndecidimos crear una revista que une\r\ndiseño, creatividad y el mundo rural.\r\nAsí nació “somos” un espacio\r\npensado para informar, entretener y\r\ndar visibilidad a las historias,\r\nactividades y personas de Antonio\r\nCarboni y sus alrededores.\n\r\nAunque no somos de Carboni,\r\ncompartimos gran parte de nuestra\r\nformación y experiencia dentro de\r\nesta escuela, lo que nos permitió\r\nconocer de cerca su gente, sus\r\nhistorias y todo lo que sucede\r\nalrededor.\r\nEstamos muy felices y entusiasmadas\r\nde compartir esta primera edición e\r\ninvitarlos a ser parte de este proyecto.\n\r\nEn cada edición van a encontrar\r\nentrevistas, historias locales,\r\nactualidad, juegos, curiosidades ,\r\ncultura, educación y mucho más."
+      }
+    ]
   },
   {
     "numero": "02",
