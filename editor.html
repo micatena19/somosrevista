@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor de imágenes · SOMOS</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav><div class="container nav-content"><a href="index.html" class="logo-nav"><h1>somos</h1><span>Editor de imágenes</span></a></div></nav>
+<main class="editor-wrap">
+  <h2 class="section-title">Editor de imágenes</h2>
+  <div class="divider"></div>
+  <ol>
+    <li>Elegí una foto de tu compu o celular (cualquier tamaño).</li>
+    <li>Arrastrá los bordes del recuadro para recortarla. Podés rotarla o hacer zoom.</li>
+    <li>Tocá <b>Descargar imagen lista</b> y subí ese archivo en el panel de control.</li>
+  </ol>
+  <input type="file" id="file" accept="image/*">
+  <div id="tools" hidden>
+    <div class="herramientas">
+      <button class="btn btn-outline" data-r="NaN">Libre</button>
+      <button class="btn btn-outline" data-r="0.75">Portada 3:4</button>
+      <button class="btn btn-outline" data-r="1">Cuadrado</button>
+      <button class="btn btn-outline" data-r="1.3333">Horizontal 4:3</button>
+      <button class="btn btn-outline" data-r="1.7778">Panorámica 16:9</button>
+    </div>
+    <div class="herramientas">
+      <button class="btn btn-outline" id="izq">↺ Rotar</button>
+      <button class="btn btn-outline" id="der">↻ Rotar</button>
+      <button class="btn btn-outline" id="mas">＋ Zoom</button>
+      <button class="btn btn-outline" id="menos">－ Zoom</button>
+    </div>
+    <div class="editor-area"><img id="img" alt="Imagen a editar"></div>
+    <p class="medida" id="medida"></p>
+    <button class="btn btn-black" id="bajar">Descargar imagen lista</button>
+  </div>
+</main>
+<footer><div class="container">SOMOS • LA REVISTA LOCAL</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+<script>
+let cr, nombre = 'imagen';
+const $ = id => document.getElementById(id), img = $('img');
+$('file').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  nombre = f.name.replace(/\.[^.]+$/, '');
+  if (cr) cr.destroy();
+  img.onload = () => {
+    cr = new Cropper(img, {viewMode: 1, autoCropArea: 1, crop: ev => $('medida').textContent = 'Tamaño del recorte: ' + Math.round(ev.detail.width) + ' × ' + Math.round(ev.detail.height) + ' px'});
+    $('tools').hidden = false;
+  };
+  img.src = URL.createObjectURL(f);
+};
+document.querySelectorAll('[data-r]').forEach(b => b.onclick = () => cr.setAspectRatio(parseFloat(b.dataset.r)));
+$('izq').onclick = () => cr.rotate(-90); $('der').onclick = () => cr.rotate(90);
+$('mas').onclick = () => cr.zoom(0.1); $('menos').onclick = () => cr.zoom(-0.1);
+$('bajar').onclick = () => {
+  const cv = cr.getCroppedCanvas({maxWidth: 1600, maxHeight: 1600, fillColor: '#fff'});
+  cv.toBlob(b => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = nombre + '-editada.jpg'; a.click(); }, 'image/jpeg', 0.9);
+};
+</script>
+</body>
+</html>
