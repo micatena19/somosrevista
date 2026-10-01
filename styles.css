@@ -84,3 +84,9 @@ footer{background:var(--white);padding:30px 0;text-align:center;font-size:.75rem
 .dots button{width:11px;height:11px;border-radius:50%;border:1px solid #fff;background:transparent;padding:0;cursor:pointer}
 .dots button.on{background:#fff}
 @media(max-width:850px){.slider{height:320px}}
+.nota-pagina h2{font-family:var(--font-logo);font-size:1.5rem;text-transform:uppercase;letter-spacing:-.5px;margin:40px 0 15px}
+.nota-pagina blockquote{border-left:3px solid var(--black);padding:6px 0 6px 22px;margin:30px 0;font-family:var(--font-italic);font-size:1.35rem;line-height:1.5}
+.nota-pagina ul{margin:0 0 20px 22px;line-height:1.9}
+.nota-pagina figure{margin:35px 0}
+.nota-pagina figure img{margin-bottom:8px}
+.nota-pagina figcaption{font-size:.8rem;color:var(--gray-text);font-style:italic}
