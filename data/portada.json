@@ -1,11 +1,18 @@
 [
   {
+    "imagen": "/somosrevista/images/IMG-20260617-WA0022.jpg",
     "descripcion": "Fotografía SOMOS"
   },
   {
-    "imagen": "/somosrevista/images/Screenshot_20260930_163128_Instagram.jpg"
+    "imagen": "/somosrevista/images/IMG-20260826-WA0057.jpg"
   },
   {
-    "imagen": "/somosrevista/images/Screenshot_20261001_144125_Instagram.jpg"
+    "imagen": "/somosrevista/images/Screenshot_20261001_144125_Instagram-1.jpg"
+  },
+  {
+    "imagen": "/somosrevista/images/Screenshot_20261001_150537_Instagram.jpg"
+  },
+  {
+    "imagen": "/somosrevista/images/Screenshot_20261001_150623_Instagram.jpg"
   }
 ]
