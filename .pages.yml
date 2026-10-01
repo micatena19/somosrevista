@@ -12,7 +12,7 @@ media:
 
 content:
   - name: ediciones
-    label: Ediciones
+    label: Ediciones y sus notas
     type: file
     path: data/ediciones.json
     format: json
@@ -30,32 +30,29 @@ content:
         options:
           media: imagenes
       - name: archivo
-        label: PDF de la edición
+        label: PDF de la revista completa (opcional)
         type: file
         options:
           media: pdfs
       - name: enlace
-        label: O pegá un link externo (opcional)
+        label: O link externo de la revista (opcional)
         type: string
-
-  - name: noticias
-    label: Noticias
-    type: file
-    path: data/noticias.json
-    format: json
-    list: true
-    fields:
-      - name: titulo
-        label: Título
-        type: string
-      - name: categoria
-        label: Categoría (ej. Comunidad)
-        type: string
-      - name: imagen
-        label: Foto
-        type: image
-        options:
-          media: imagenes
-      - name: enlace
-        label: Link de la nota (opcional)
-        type: string
+      - name: notas
+        label: Notas de esta edición
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Título
+            type: string
+          - name: categoria
+            label: Categoría (ej. Comunidad)
+            type: string
+          - name: imagen
+            label: Foto
+            type: image
+            options:
+              media: imagenes
+          - name: texto
+            label: Texto de la nota (dejá una línea en blanco entre párrafos)
+            type: text
