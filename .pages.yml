@@ -54,8 +54,21 @@ content:
             options:
               media: imagenes
           - name: texto
-            label: Texto de la nota (dejá una línea en blanco entre párrafos)
+            label: Texto de la nota (línea en blanco entre párrafos. ## subtítulo, > cita, - lista, [foto 1] para poner una foto)
             type: text
+          - name: fotos
+            label: Fotos dentro de la nota (la 1ª es [foto 1], la 2ª [foto 2]...)
+            type: object
+            list: true
+            fields:
+              - name: imagen
+                label: Foto
+                type: image
+                options:
+                  media: imagenes
+              - name: pie
+                label: Pie de foto (opcional)
+                type: string
 
   - name: portada
     label: Fotos del inicio (carrusel)
