@@ -27,17 +27,17 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-border);padding:1
 .section-header{margin-bottom:40px}
 .section-title{font-family:var(--font-logo);font-size:2rem;text-transform:uppercase;letter-spacing:-.5px;font-weight:bold}
 .divider{width:35px;height:2px;background:var(--black);margin:10px 0 15px}
-.ediciones-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px}
+.ediciones-grid{align-items:start;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px}
 .card-edicion{background:var(--white);border:1px solid var(--gray-border);padding:20px}
 .card-edicion-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .card-edicion-top h4{font-family:var(--font-logo);font-size:1.5rem;text-transform:lowercase;letter-spacing:-2px}
 .card-edicion-top span{font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666}
 .card-edicion .tagline{font-family:var(--font-italic);font-size:.85rem;margin-bottom:15px}
-.card-edicion img{width:100%;height:260px;object-fit:cover;margin-bottom:15px}
+.card-edicion img{width:100%;height:auto;margin-bottom:15px}
 .notas-section{padding:70px 0;background:var(--white);border-bottom:1px solid var(--gray-border)}
-.notas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.notas-grid{align-items:start;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 .nota-card{border:1px solid var(--gray-border);background:var(--white);overflow:hidden}
-.nota-card img{width:100%;height:200px;object-fit:cover}
+.nota-card img{width:100%;height:auto}
 .nota-content{padding:20px}
 .nota-cat{font-size:.65rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#777;margin-bottom:8px}
 .nota-title{font-family:var(--font-logo);font-size:1.3rem;text-transform:uppercase;line-height:1.2;margin-bottom:10px}
@@ -55,10 +55,22 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-border);padding:1
 footer{background:var(--white);padding:30px 0;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666}
 @media(max-width:850px){.hero-grid,.duo-grid{grid-template-columns:1fr}.hero-title{font-size:4.5rem;letter-spacing:-5px}.nav-links{display:none}}
 .nota-pagina{max-width:760px;margin:0 auto;padding:50px 20px 70px}
-.nota-pagina img{width:100%;max-height:440px;object-fit:cover;margin-bottom:25px}
+.nota-pagina img{width:100%;height:auto;margin-bottom:25px}
 .nota-pagina h1{font-family:var(--font-logo);font-size:2.4rem;text-transform:uppercase;line-height:1.1;letter-spacing:-1px;margin-bottom:25px}
 .nota-pagina p{font-size:1rem;line-height:1.8;margin-bottom:18px}
 .nota-pagina .volver{display:inline-block;margin-top:20px}
 .edicion-head{display:flex;flex-wrap:wrap;gap:35px;align-items:center;margin-bottom:60px}
-.edicion-head img{width:260px;max-width:100%;height:340px;object-fit:cover}
+.edicion-head img{width:260px;max-width:100%;height:auto}
 .nota-content .btn{margin-top:6px}
+[hidden]{display:none!important}
+.clima-grid{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:space-between}
+.qr-box{text-align:center;background:#fff;border:1px solid var(--gray-border);padding:20px}
+.qr-box #qr{display:inline-block}
+.qr-box span{display:block;margin-top:10px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#666}
+.editor-wrap{max-width:900px;margin:0 auto;padding:50px 20px 70px}
+.editor-wrap h2{margin-bottom:10px}
+.editor-wrap ol{margin:15px 0 25px 20px;font-size:.9rem;line-height:1.8}
+.herramientas{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.editor-area{background:#222;max-height:70vh}
+.editor-area img{display:block;max-width:100%}
+.medida{font-size:.8rem;font-weight:700;color:var(--gray-text);margin:10px 0}
