@@ -1,0 +1,64 @@
+:root{--bg-color:#f8f8f8;--white:#fff;--black:#0a0a0a;--gray-border:#e2e2e2;--gray-text:#555;--font-logo:'Montserrat','Inter',sans-serif;--font-italic:'Playfair Display',serif;--font-sans:'Montserrat',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-color);color:var(--black);font-family:var(--font-sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1240px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;padding:12px 26px;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s ease}
+.btn-black{background:var(--black);color:var(--white)}
+.btn-black:hover{background:#2b2b2b}
+.btn-outline{background:transparent;border:1px solid var(--black);color:var(--black)}
+.btn-outline:hover{background:var(--black);color:var(--white)}
+nav{background:var(--white);border-bottom:1px solid var(--gray-border);padding:18px 0;position:sticky;top:0;z-index:100}
+.nav-content{display:flex;justify-content:space-between;align-items:center}
+.logo-nav{display:flex;align-items:baseline;gap:10px}
+.logo-nav h1{font-family:var(--font-logo);font-size:1.9rem;font-weight:700;text-transform:lowercase;letter-spacing:-3px;line-height:1}
+.logo-nav span{font-family:var(--font-italic);font-size:1rem;color:#444}
+.nav-links{display:flex;gap:25px;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.hero{background:var(--white);padding:60px 0;border-bottom:1px solid var(--gray-border)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center}
+.hero-title{font-family:var(--font-logo);font-size:6.5rem;font-weight:700;text-transform:lowercase;line-height:.85;letter-spacing:-8px;margin-bottom:10px}
+.hero-subtitle{font-family:var(--font-italic);font-size:2.2rem;margin-bottom:25px}
+.hero-description{font-size:.85rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gray-text);max-width:440px;margin-bottom:30px;line-height:1.6}
+.hero-buttons{display:flex;gap:15px}
+.hero-img-container img{width:100%;height:480px;object-fit:cover;border-radius:2px}
+.ediciones-archivo{padding:70px 0;border-bottom:1px solid var(--gray-border)}
+.section-header{margin-bottom:40px}
+.section-title{font-family:var(--font-logo);font-size:2rem;text-transform:uppercase;letter-spacing:-.5px;font-weight:bold}
+.divider{width:35px;height:2px;background:var(--black);margin:10px 0 15px}
+.ediciones-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px}
+.card-edicion{background:var(--white);border:1px solid var(--gray-border);padding:20px}
+.card-edicion-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.card-edicion-top h4{font-family:var(--font-logo);font-size:1.5rem;text-transform:lowercase;letter-spacing:-2px}
+.card-edicion-top span{font-size:.7rem;font-weight:700;text-transform:uppercase;color:#666}
+.card-edicion .tagline{font-family:var(--font-italic);font-size:.85rem;margin-bottom:15px}
+.card-edicion img{width:100%;height:260px;object-fit:cover;margin-bottom:15px}
+.notas-section{padding:70px 0;background:var(--white);border-bottom:1px solid var(--gray-border)}
+.notas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.nota-card{border:1px solid var(--gray-border);background:var(--white);overflow:hidden}
+.nota-card img{width:100%;height:200px;object-fit:cover}
+.nota-content{padding:20px}
+.nota-cat{font-size:.65rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#777;margin-bottom:8px}
+.nota-title{font-family:var(--font-logo);font-size:1.3rem;text-transform:uppercase;line-height:1.2;margin-bottom:10px}
+.nota-link{display:inline-block;font-size:.75rem;font-weight:bold;text-transform:uppercase;margin-top:10px}
+.vacio{color:var(--gray-text);font-size:.85rem}
+.info-duo{padding:70px 0;border-bottom:1px solid var(--gray-border)}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.duo-box{padding:45px;border:1px solid var(--gray-border)}
+.duo-box.dark{background:var(--black);color:var(--white)}
+.duo-box.light{background:var(--white);color:var(--black)}
+.duo-box h3{font-family:var(--font-logo);font-size:2rem;text-transform:uppercase;margin-bottom:15px;letter-spacing:-1px}
+.duo-box p{font-size:.85rem;line-height:1.6;margin-bottom:25px}
+.contacto{display:flex;flex-direction:column;gap:12px;max-width:320px}
+.contacto a{background:#fff;color:#0a0a0a;padding:12px 18px;border-radius:4px;font-weight:700;font-size:.75rem;letter-spacing:1px;display:flex;justify-content:space-between;border:1px solid #fff}
+footer{background:var(--white);padding:30px 0;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666}
+@media(max-width:850px){.hero-grid,.duo-grid{grid-template-columns:1fr}.hero-title{font-size:4.5rem;letter-spacing:-5px}.nav-links{display:none}}
+.nota-pagina{max-width:760px;margin:0 auto;padding:50px 20px 70px}
+.nota-pagina img{width:100%;max-height:440px;object-fit:cover;margin-bottom:25px}
+.nota-pagina h1{font-family:var(--font-logo);font-size:2.4rem;text-transform:uppercase;line-height:1.1;letter-spacing:-1px;margin-bottom:25px}
+.nota-pagina p{font-size:1rem;line-height:1.8;margin-bottom:18px}
+.nota-pagina .volver{display:inline-block;margin-top:20px}
+.edicion-head{display:flex;flex-wrap:wrap;gap:35px;align-items:center;margin-bottom:60px}
+.edicion-head img{width:260px;max-width:100%;height:340px;object-fit:cover}
+.nota-content .btn{margin-top:6px}
