@@ -105,3 +105,14 @@ footer{background:var(--white);padding:30px 0;text-align:center;font-size:.75rem
 .anuncio-dots button.on{background:#0a0a0a}
 .nota-pagina .bajada{font-family:var(--font-italic);font-size:1.3rem;line-height:1.4;color:var(--gray-text);margin:-10px 0 28px}
 .nota-sub{font-family:var(--font-italic);font-size:.95rem;line-height:1.4;color:var(--gray-text);margin-bottom:12px}
+#barra-anuncio:empty{display:none}
+.barra{position:relative;display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--gray-border);border-left:4px solid var(--black);padding:8px 44px 8px 12px;margin-bottom:30px;min-height:68px;animation:aparece .4s ease}
+.barra-tag{flex:none;font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:#0a0a0a;color:#fff;padding:3px 7px}
+.barra-slides{flex:1;min-width:0}
+.barra-slide{display:none;align-items:center;gap:12px;color:inherit}
+.barra-slide.on{display:flex}
+.barra-slide img{flex:none;height:52px;width:auto;max-width:96px;margin:0;object-fit:contain}
+.barra-txt{flex:1;min-width:0;font-size:.85rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.barra-btn{flex:none;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:1px solid var(--black);padding:7px 12px}
+.barra-x{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;background:transparent;font-size:1.3rem;line-height:1;cursor:pointer}
+@media(max-width:600px){.barra-btn,.barra-tag{display:none}}
