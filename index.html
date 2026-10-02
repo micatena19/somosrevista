@@ -133,13 +133,22 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 </script>
 <script>
 (async () => {
+  const VISITAS_SIN_ANUNCIO = 1;   // visitas que se saltea después de cerrarlo (1 = vuelve a salir en la 2ª visita)
+  const ROTACION_MS = 2500;        // cada cuántos milisegundos cambia de anuncio (2500 = 2,5 segundos)
   let a = [];
   try { a = await (await fetch('data/anuncios.json?v=' + Date.now())).json(); } catch (e) {}
   const hoy = new Date().toLocaleDateString('en-CA');
-  a = a.filter(x => x.activo && (x.titulo || x.imagen) && (!x.hasta || String(x.hasta).slice(0, 10) >= hoy));
+  const dd = x => String(x.donde || '').toLowerCase();
+  const enVentana = x => !dd(x) || dd(x).includes('ventana') || dd(x) === 'ambos';
+  a = a.filter(x => x.activo && enVentana(x) && (x.titulo || x.imagen) && (!x.hasta || String(x.hasta).slice(0, 10) >= hoy));
   if (!a.length) return;
   const clave = a.map(x => (x.titulo || '') + (x.imagen || '')).join('|');
-  try { const c = JSON.parse(localStorage.getItem('somos-anuncio') || '{}'); if (c.clave === clave && c.dia === hoy) return; } catch (e) {}
+  try {
+    if (sessionStorage.getItem('somos-visita')) return;   // ya se evaluó en esta visita
+    sessionStorage.setItem('somos-visita', '1');
+    const c = JSON.parse(localStorage.getItem('somos-anuncio') || '{}');
+    if (c.clave === clave && c.saltar > 0) { localStorage.setItem('somos-anuncio', JSON.stringify({clave, saltar: c.saltar - 1})); return; }
+  } catch (e) {}
   const m = document.createElement('div');
   m.className = 'anuncio-fondo';
   m.innerHTML = '<div class="anuncio" role="dialog" aria-modal="true" aria-label="Anuncio"><button class="anuncio-x" aria-label="Cerrar">×</button><span class="anuncio-tag">Anuncio</span>' +
@@ -147,7 +156,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
       <div class="anuncio-cuerpo${x.imagen ? '' : ' sin-img'}">${x.titulo ? `<h3>${esc(x.titulo)}</h3>` : ''}${x.texto ? `<p>${esc(x.texto).replace(/\n/g, '<br>')}</p>` : ''}${x.enlace ? `<a href="${esc(x.enlace)}" target="_blank" rel="noopener" class="btn btn-black">${esc(x.boton || 'Más información')}</a>` : ''}</div></div>`).join('') +
     (a.length > 1 ? '<div class="anuncio-dots">' + a.map((_, i) => `<button aria-label="Anuncio ${i + 1}"></button>`).join('') + '</div>' : '') + '</div>';
   let t;
-  const cerrar = () => { clearInterval(t); m.remove(); document.removeEventListener('keydown', tecla); try { localStorage.setItem('somos-anuncio', JSON.stringify({clave, dia: hoy})); } catch (e) {} };
+  const cerrar = () => { clearInterval(t); m.remove(); document.removeEventListener('keydown', tecla); try { localStorage.setItem('somos-anuncio', JSON.stringify({clave, saltar: VISITAS_SIN_ANUNCIO})); } catch (e) {} };
   const tecla = e => { if (e.key === 'Escape') cerrar(); };
   m.querySelector('.anuncio-x').onclick = cerrar;
   m.addEventListener('click', e => { if (e.target === m) cerrar(); });
@@ -156,7 +165,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
     const sl = [...m.querySelectorAll('.anuncio-slide')], ds = [...m.querySelectorAll('.anuncio-dots button')];
     let i = 0;
     const ir = n => { i = (n + sl.length) % sl.length; sl.forEach((s, k) => s.classList.toggle('on', k === i)); ds.forEach((d, k) => d.classList.toggle('on', k === i)); };
-    const auto = () => { clearInterval(t); t = setInterval(() => ir(i + 1), 6000); };
+    const auto = () => { clearInterval(t); t = setInterval(() => ir(i + 1), ROTACION_MS); };
     ds.forEach((d, k) => d.onclick = () => { ir(k); auto(); });
     m.querySelector('.anuncio').addEventListener('mouseenter', () => clearInterval(t));
     m.querySelector('.anuncio').addEventListener('mouseleave', auto);
