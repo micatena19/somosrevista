@@ -99,6 +99,11 @@ content:
       - name: activo
         label: Mostrar este anuncio en el sitio
         type: boolean
+      - name: donde
+        label: ¿Dónde se muestra?
+        type: select
+        options:
+          values: [Ventana y barra, Solo ventana, Solo barra]
       - name: titulo
         label: Título
         type: string
