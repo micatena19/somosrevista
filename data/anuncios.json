@@ -5,11 +5,15 @@
     "texto": "Acá va el texto de tu anuncio. Activalo desde el panel cuando quieras mostrarlo.",
     "imagen": "/somosrevista/images/Screenshot_20261002_102330_Instagram.jpg",
     "boton": "Más información",
+    "enlace": "https://www.instagram.com/alma.criolla__?stkn=MWlsa3F2aHVmNHZwZw==",
     "hasta": "2026-10-02"
   },
   {
-    "activo": false,
+    "activo": true,
+    "titulo": "LOS MONITOS",
+    "texto": "Delicias caseras - pedidos personalizados - mesas dulces - catering para eventos.",
     "imagen": "/somosrevista/images/7_20260903_175052_0002.png",
+    "enlace": "https://www.instagram.com/reposterialosm_?stkn=MWpxZmRlNXQ1YXA3dg==",
     "hasta": "2026-10-02"
   }
 ]
