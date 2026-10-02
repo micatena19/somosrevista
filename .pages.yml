@@ -45,6 +45,9 @@ content:
           - name: titulo
             label: Título
             type: string
+          - name: subtitulo
+            label: Subtítulo (opcional, va debajo del título)
+            type: string
           - name: categoria
             label: Categoría (ej. Comunidad)
             type: string
@@ -85,3 +88,34 @@ content:
       - name: descripcion
         label: Descripción corta (para accesibilidad y Google)
         type: string
+
+  - name: anuncios
+    label: Anuncios (ventana emergente)
+    type: file
+    path: data/anuncios.json
+    format: json
+    list: true
+    fields:
+      - name: activo
+        label: Mostrar este anuncio en el sitio
+        type: boolean
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto (opcional)
+        type: text
+      - name: imagen
+        label: Imagen o afiche (cualquier tamaño)
+        type: image
+        options:
+          media: imagenes
+      - name: boton
+        label: Texto del botón (ej. Más información)
+        type: string
+      - name: enlace
+        label: Link del botón (ej. WhatsApp o web del anunciante)
+        type: string
+      - name: hasta
+        label: Mostrar hasta el día (opcional, después se oculta solo)
+        type: date
