@@ -44,7 +44,7 @@ const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.n
         <img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">
         <div class="nota-content">
           <div class="nota-cat">${esc(n.categoria)}</div>
-          <h3 class="nota-title">${esc(n.titulo)}</h3>
+          <h3 class="nota-title">${esc(n.titulo)}</h3>${n.subtitulo ? `<p class="nota-sub">${esc(n.subtitulo)}</p>` : ''}
           <a href="nota.html?e=${encodeURIComponent(e.numero)}&n=${slug(n.titulo)}" class="btn btn-black">Leer ahora</a>
         </div>
       </article>`).join('');
