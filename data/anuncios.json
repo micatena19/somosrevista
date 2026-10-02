@@ -17,5 +17,25 @@
     "imagen": "/somosrevista/images/7_20260903_175052_0002-1.png",
     "enlace": "https://www.instagram.com/reposterialosm_?stkn=MWpxZmRlNXQ1YXA3dg==",
     "hasta": "2026-10-02"
+  },
+  {
+    "activo": true,
+    "donde": "Solo ventana",
+    "titulo": "TERAPIA OCUPACIONAL",
+    "texto": "Espacios individuales y grupales para adolescentes y jóvenes\n\nLic. en Terapia Ocupacional\nM. Roberta Bariani",
+    "imagen": "/somosrevista/images/Screenshot_20261002_155340_Gallery.jpg",
+    "boton": "Turnos y consultas:",
+    "enlace": "https://wa.link/pbamtf",
+    "hasta": "2026-10-02"
+  },
+  {
+    "activo": true,
+    "donde": "Solo barra",
+    "titulo": "TERAPIA OCUPACIONAL ",
+    "texto": "Espacios individuales y grupales para adolescentes y jóvenes\n\nLic. en Terapia Ocupacional\nM. Roberta Bariani",
+    "imagen": "/somosrevista/images/IMG-20261002-WA0110.jpg",
+    "boton": "Turnos y consultas:",
+    "enlace": "https://wa.link/pbamtf",
+    "hasta": "2026-10-02"
   }
 ]
