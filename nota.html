@@ -40,18 +40,18 @@ const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.n
     document.title = n.titulo + ' · SOMOS';
     const fig = f => `<figure><img src="${esc(f.imagen)}" alt="${esc(f.pie || n.titulo)}">${f.pie ? `<figcaption>${esc(f.pie)}</figcaption>` : ''}</figure>`;
     const fotos = n.fotos || [], usadas = new Set();
-    const bloques = String(n.texto || '').split(/\n\s*\n/).map(b => b.trim()).filter(Boolean);
+    const bloques = String(n.texto || '').replace(/[\[\(]\s*(?:foto|imagen)\s*n?[°º.]?\s*(\d+)\s*[\]\)]/gi, '\n\n[foto $1]\n\n').replace(/^(>[^\n]*(?:\n>[^\n]*)*)$/gm, '\n\n$1\n\n').replace(/^(##[^\n]*)$/gm, '\n\n$1\n\n').replace(/^(- [^\n]*(?:\n- [^\n]*)*)$/gm, '\n\n$1\n\n').split(/\n\s*\n/).map(b => b.trim()).filter(Boolean);
     let parrafos = bloques.map(b => {
       const m = b.match(/^\[foto\s*(\d+)\]$/i);
       if (m) { const f = fotos[m[1] - 1]; if (f && f.imagen) { usadas.add(m[1] - 1); return fig(f); } return ''; }
       if (b.startsWith('## ')) return '<h2>' + esc(b.slice(3)) + '</h2>';
-      if (b.startsWith('> ')) return '<blockquote>' + esc(b.replace(/^> ?/gm, '')).replace(/\n/g, '<br>') + '</blockquote>';
+      if (b.startsWith('>')) return '<blockquote>' + esc(b.replace(/^>[ \t]*/gm, '')).replace(/\n/g, '<br>') + '</blockquote>';
       if (b.startsWith('- ')) return '<ul>' + b.split('\n').map(l => '<li>' + esc(l.replace(/^- ?/, '')) + '</li>').join('') + '</ul>';
       return '<p>' + esc(b).replace(/\n/g, '<br>') + '</p>';
     }).join('');
     parrafos += fotos.map((f, i) => usadas.has(i) || !f.imagen ? '' : fig(f)).join('');
     el.innerHTML = (n.imagen ? `<img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">` : '') +
-      `<div class="nota-cat">${esc(n.categoria)} · Edición #${esc(e.numero)}</div><h1>${esc(n.titulo)}</h1>${parrafos}` +
+      `<div class="nota-cat">${esc(n.categoria)} · Edición #${esc(e.numero)}</div><h1>${esc(n.titulo)}</h1>${n.subtitulo ? `<p class="bajada">${esc(n.subtitulo)}</p>` : ''}${parrafos}` +
       `<a href="${back}" class="btn btn-outline volver">← Volver a la edición</a>`;
   } catch (err) {
     el.innerHTML = `<p>No encontramos esa nota.</p><a href="${back}" class="btn btn-outline volver">← Volver</a>`;
