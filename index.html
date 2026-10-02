@@ -131,5 +131,39 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
   ir(0); auto();
 })();
 </script>
+<script>
+(async () => {
+  let a = [];
+  try { a = await (await fetch('data/anuncios.json?v=' + Date.now())).json(); } catch (e) {}
+  const hoy = new Date().toLocaleDateString('en-CA');
+  a = a.filter(x => x.activo && (x.titulo || x.imagen) && (!x.hasta || String(x.hasta).slice(0, 10) >= hoy));
+  if (!a.length) return;
+  const clave = a.map(x => (x.titulo || '') + (x.imagen || '')).join('|');
+  try { const c = JSON.parse(localStorage.getItem('somos-anuncio') || '{}'); if (c.clave === clave && c.dia === hoy) return; } catch (e) {}
+  const m = document.createElement('div');
+  m.className = 'anuncio-fondo';
+  m.innerHTML = '<div class="anuncio" role="dialog" aria-modal="true" aria-label="Anuncio"><button class="anuncio-x" aria-label="Cerrar">×</button><span class="anuncio-tag">Anuncio</span>' +
+    a.map((x, i) => `<div class="anuncio-slide${i ? '' : ' on'}">${x.imagen ? `<img src="${esc(x.imagen)}" alt="${esc(x.titulo || 'Anuncio')}">` : ''}
+      <div class="anuncio-cuerpo${x.imagen ? '' : ' sin-img'}">${x.titulo ? `<h3>${esc(x.titulo)}</h3>` : ''}${x.texto ? `<p>${esc(x.texto).replace(/\n/g, '<br>')}</p>` : ''}${x.enlace ? `<a href="${esc(x.enlace)}" target="_blank" rel="noopener" class="btn btn-black">${esc(x.boton || 'Más información')}</a>` : ''}</div></div>`).join('') +
+    (a.length > 1 ? '<div class="anuncio-dots">' + a.map((_, i) => `<button aria-label="Anuncio ${i + 1}"></button>`).join('') + '</div>' : '') + '</div>';
+  let t;
+  const cerrar = () => { clearInterval(t); m.remove(); document.removeEventListener('keydown', tecla); try { localStorage.setItem('somos-anuncio', JSON.stringify({clave, dia: hoy})); } catch (e) {} };
+  const tecla = e => { if (e.key === 'Escape') cerrar(); };
+  m.querySelector('.anuncio-x').onclick = cerrar;
+  m.addEventListener('click', e => { if (e.target === m) cerrar(); });
+  document.addEventListener('keydown', tecla);
+  if (a.length > 1) {
+    const sl = [...m.querySelectorAll('.anuncio-slide')], ds = [...m.querySelectorAll('.anuncio-dots button')];
+    let i = 0;
+    const ir = n => { i = (n + sl.length) % sl.length; sl.forEach((s, k) => s.classList.toggle('on', k === i)); ds.forEach((d, k) => d.classList.toggle('on', k === i)); };
+    const auto = () => { clearInterval(t); t = setInterval(() => ir(i + 1), 6000); };
+    ds.forEach((d, k) => d.onclick = () => { ir(k); auto(); });
+    m.querySelector('.anuncio').addEventListener('mouseenter', () => clearInterval(t));
+    m.querySelector('.anuncio').addEventListener('mouseleave', auto);
+    ir(0); auto();
+  }
+  setTimeout(() => { document.body.appendChild(m); m.querySelector('.anuncio-x').focus(); }, 1200);
+})();
+</script>
 </body>
 </html>
