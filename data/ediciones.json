@@ -82,11 +82,29 @@
       {
         "titulo": "De Antonio Carboni a recorrer Hispanoamérica",
         "categoria": "Gente de acá",
-        "texto": "Gustavo Speranzoni encontró en la maquinaria agrícola una profesión que hoy lo lleva a recorrer distintos países de Latinoamérica.\n\nOriundo de Antonio Carboni, Gustavo se desempeña como Especialista a Campo en Cosechadoras y Pulverizadoras para Massey Ferguson en Hispanoamérica. Su trabajo lo lleva a viajar por Argentina, Uruguay, Paraguay, Chile, Bolivia, Perú y Colombia, donde capacita concesionarios, realiza demostraciones de maquinaria, analiza mercados y participa en el desarrollo de nuevos equipos.\n\n[foto 1]\n\nPero el camino comenzó mucho antes. Luego de finalizar la secundaria, decidió estudiar Ingeniería en Mecanización Agrícola en la Universidad de Morón, carrera que completó en 2017. Según recuerda, una charla realizada durante sus últimos años de escuela fue el impulso que necesitaba para elegir su profesión.\n\n[foto 2]\n\nActualmente trabaja en contacto permanente con distintas áreas de la empresa, buscando mejorar productos y acercar nuevas tecnologías al sector agropecuario.\n\n> “Lo que más disfruto es compartir lo que sé, aprender en cada viaje y formar parte de un equipo que trabaja para seguir innovando.”"
+        "imagen": "/somosrevista/images/IMG-20261001-WA0105.jpg",
+        "texto": "Gustavo Speranzoni encontró en la maquinaria agrícola una profesión que hoy lo lleva a recorrer distintos países de Latinoamérica.\n\nOriundo de Antonio Carboni, Gustavo se desempeña como Especialista a Campo en Cosechadoras y Pulverizadoras para Massey Ferguson en Hispanoamérica. Su trabajo lo lleva a viajar por Argentina, Uruguay, Paraguay, Chile, Bolivia, Perú y Colombia, donde capacita concesionarios, realiza demostraciones de maquinaria, analiza mercados y participa en el desarrollo de nuevos equipos.\n\n[foto 1]\n\nPero el camino comenzó mucho antes. Luego de finalizar la secundaria, decidió estudiar Ingeniería en Mecanización Agrícola en la Universidad de Morón, carrera que completó en 2017. Según recuerda, una charla realizada durante sus últimos años de escuela fue el impulso que necesitaba para elegir su profesión.\n\n[foto 2]\n\nActualmente trabaja en contacto permanente con distintas áreas de la empresa, buscando mejorar productos y acercar nuevas tecnologías al sector agropecuario.\n\n> “Lo que más disfruto es compartir lo que sé, aprender en cada viaje y formar parte de un equipo que trabaja para seguir innovando.”",
+        "fotos": [
+          {
+            "imagen": "/somosrevista/images/IMG-20261001-WA0106.jpg"
+          },
+          {
+            "imagen": "/somosrevista/images/IMG-20261001-WA0105-1.jpg"
+          }
+        ]
       },
       {
         "titulo": "Cañada del toro: producción lechera con mirada al futuro",
-        "texto": "Con una producción diaria que ronda entre 30.000 y 35.000 litros de leche, Cañada del Toro es una empresa familiar dedicada a la actividad tambera.\n\nActualmente cuenta con tres tambos pastoriles, dos ubicados en Lobos y uno en Del Carril, donde trabajan alrededor de 600 vacas por establecimiento. La producción varía según la época del año, ya que manejan partos estacionados y un sistema adaptado a los ciclos naturales.\n\n[foto 1]\n\nLa empresa continúa creciendo y ya proyecta una importante incorporación tecnológica: un tambo robot, que permitirá acompañar el crecimiento de los rodeos mediante un sistema de ordeñe automatizado.\n\n[foto 2]\n\n> Con innovación, trabajo familiar y visión de futuro, Cañada del Toro representa el desarrollo constante del sector agropecuario de la región."
+        "imagen": "/somosrevista/images/IMG-20261001-WA0107.jpg",
+        "texto": "Con una producción diaria que ronda entre 30.000 y 35.000 litros de leche, Cañada del Toro es una empresa familiar dedicada a la actividad tambera.\n\nActualmente cuenta con tres tambos pastoriles, dos ubicados en Lobos y uno en Del Carril, donde trabajan alrededor de 600 vacas por establecimiento. La producción varía según la época del año, ya que manejan partos estacionados y un sistema adaptado a los ciclos naturales.\n\n[foto 1]\n\nLa empresa continúa creciendo y ya proyecta una importante incorporación tecnológica: un tambo robot, que permitirá acompañar el crecimiento de los rodeos mediante un sistema de ordeñe automatizado.\n\n[foto 2]\n\n> Con innovación, trabajo familiar y visión de futuro, Cañada del Toro representa el desarrollo constante del sector agropecuario de la región.",
+        "fotos": [
+          {
+            "imagen": "/somosrevista/images/IMG-20261001-WA0109.jpg"
+          },
+          {
+            "imagen": "/somosrevista/images/IMG-20261001-WA0110.jpg"
+          }
+        ]
       }
     ]
   },
