@@ -1,10 +1,15 @@
 [
   {
-    "activo": false,
+    "activo": true,
     "titulo": "Anuncio de ejemplo",
     "texto": "Acá va el texto de tu anuncio. Activalo desde el panel cuando quieras mostrarlo.",
-    "imagen": "",
+    "imagen": "/somosrevista/images/Screenshot_20261002_102330_Instagram.jpg",
     "boton": "Más información",
-    "enlace": ""
+    "hasta": "2026-10-02"
+  },
+  {
+    "activo": false,
+    "imagen": "/somosrevista/images/7_20260903_175052_0002.png",
+    "hasta": "2026-10-02"
   }
 ]
