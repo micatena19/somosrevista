@@ -1,0 +1,10 @@
+[
+  {
+    "activo": false,
+    "titulo": "Anuncio de ejemplo",
+    "texto": "Acá va el texto de tu anuncio. Activalo desde el panel cuando quieras mostrarlo.",
+    "imagen": "",
+    "boton": "Más información",
+    "enlace": ""
+  }
+]
