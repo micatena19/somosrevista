@@ -116,3 +116,9 @@ footer{background:var(--white);padding:30px 0;text-align:center;font-size:.75rem
 .barra-btn{flex:none;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:1px solid var(--black);padding:7px 12px}
 .barra-x{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;background:transparent;font-size:1.3rem;line-height:1;cursor:pointer}
 @media(max-width:600px){.barra-btn,.barra-tag{display:none}}
+#barra-anuncio .barra{margin:12px 0 0;min-height:52px;padding:5px 40px 5px 10px}
+#barra-anuncio .barra-slide img{height:38px}
+.auspiciantes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.auspiciante{display:flex;align-items:center;justify-content:center;height:100px;padding:14px;background:#fff;border:1px solid var(--gray-border);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;text-align:center}
+.auspiciante img{max-width:100%;max-height:70px;width:auto;height:auto;object-fit:contain}
+a.auspiciante:hover{border-color:var(--black)}
