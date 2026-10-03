@@ -1,80 +1,17 @@
 [
   {
-    "activo": true,
-    "donde": "Ventana y barra",
-    "titulo": "ALMA CRIOLLA",
-    "texto": "Accesorios de campo con estilo\nCintos y pañuelos\nDiseños propios",
-    "imagen": "/somosrevista/images/Screenshot_20261002_102330_Instagram-1.jpg",
+    "activo": false,
+    "titulo": "Anuncio de ejemplo",
+    "texto": "Acá va el texto de tu anuncio. Activalo desde el panel cuando quieras mostrarlo.",
+    "imagen": "",
     "boton": "Más información",
-    "enlace": "https://www.instagram.com/alma.criolla__?stkn=MWlsa3F2aHVmNHZwZw==",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Ventana y barra",
-    "titulo": "LOS MONITOS",
-    "texto": "Delicias caseras - mesas dulces - servicio de catering",
-    "imagen": "/somosrevista/images/7_20260903_175052_0002-1.png",
-    "enlace": "https://www.instagram.com/reposterialosm_?stkn=MWpxZmRlNXQ1YXA3dg==",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Solo ventana",
-    "titulo": "TERAPIA OCUPACIONAL",
-    "texto": "Espacios individuales y grupales para adolescentes y jóvenes\n\nLic. en Terapia Ocupacional\nM. Roberta Bariani",
-    "imagen": "/somosrevista/images/Screenshot_20261002_155340_Gallery-1.jpg",
-    "boton": "Turnos y consultas:",
-    "enlace": "https://wa.link/pbamtf",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Solo barra",
-    "titulo": "TERAPIA OCUPACIONAL ",
-    "texto": "Espacios individuales y talleres grupales para instituciones\n\nLic. en Terapia Ocupacional\nM. Roberta Bariani",
-    "imagen": "/somosrevista/images/IMG-20261002-WA0110.jpg",
-    "boton": "Turnos y consultas:",
-    "enlace": "https://wa.link/pbamtf",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Ventana y barra",
-    "titulo": "TU ESTILO",
-    "texto": "Tienda y peluquería | Cristina Garino | Antonio Carboni",
-    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.04.05-1.jpeg",
-    "boton": "Enviar mensaje",
-    "enlace": "https://wa.link/wrtavg",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Ventana y barra",
-    "titulo": "MLG NAILS",
-    "texto": "Manicuría | Nail Art - Antonio Carboni",
-    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 17.55.05.jpeg",
-    "boton": "Reserva tu turno",
-    "enlace": "https://www.instagram.com/mlgnailss_?stkn=Zzl6N2F2MWRqaDh4",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Ventana y barra",
-    "titulo": "STELLA PRI",
-    "texto": "Artículos de limpieza, tecnología y ferretería | Elvira",
-    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.17.13.jpeg",
-    "boton": "Enviar mensaje",
-    "enlace": "https://wa.link/3lc570",
-    "hasta": "2026-11-01"
-  },
-  {
-    "activo": true,
-    "donde": "Ventana y barra",
-    "titulo": "FG ELECTRICIDAD",
-    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.48.46.jpeg",
-    "boton": "Enviar mensaje",
-    "enlace": "https://wa.link/h01yzl",
-    "hasta": "2026-11-01"
+    "enlace": "",
+    "donde": [
+      "Ventana emergente",
+      "Barra",
+      "Nos acompañan",
+      "Tarjeta en las notas"
+    ],
+    "logo": ""
   }
 ]
