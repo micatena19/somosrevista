@@ -1,17 +1,64 @@
 [
   {
-    "activo": false,
-    "titulo": "Anuncio de ejemplo",
-    "texto": "Acá va el texto de tu anuncio. Activalo desde el panel cuando quieras mostrarlo.",
-    "imagen": "",
-    "boton": "Más información",
-    "enlace": "",
+    "activo": true,
     "donde": [
       "Ventana emergente",
       "Barra",
       "Nos acompañan",
       "Tarjeta en las notas"
     ],
-    "logo": ""
+    "titulo": "FG ELECTRICIDAD",
+    "texto": "⚡ Instalaciones y reparaciones eléctricas\n💡 Iluminación y tecnología LED\n📹 Venta e instalación de cámaras de seguridad\n🏠 Domótica y automatización para hogares inteligentes\n📍 Lobos y alrededores",
+    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.48.46-1.jpeg",
+    "logo": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.48.46-2.jpeg",
+    "boton": "Más información",
+    "enlace": "https://wa.link/uynb8e",
+    "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "STELLA PRI",
+    "texto": "Artículos de limpieza, tecnología y ferretería | Elvira",
+    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.17.13-1.jpeg",
+    "logo": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.17.13-2.jpeg",
+    "boton": "Enviar mensaje",
+    "enlace": "https://wa.link/oegblo",
+    "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "donde": [
+      "Ventana emergente"
+    ],
+    "titulo": "TERAPIA OCUPACIONAL",
+    "texto": "Espacios individuales y talleres grupales para instituciones \n\nLic en Terapia Ocupacional\nM. Roberta Bariani",
+    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 19.43.08.jpeg",
+    "boton": "Turnos y consultas",
+    "enlace": "https://wa.link/fx5t5o",
+    "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "MLG NAILS",
+    "texto": "Manicuría | Nailart. Antonio Carboni",
+    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 17.55.05-1.jpeg",
+    "logo": "/somosrevista/images/WhatsApp Image 2026-10-03 at 17.55.05-2.jpeg",
+    "boton": "Reserva tu turno",
+    "enlace": "https://www.instagram.com/mlgnailss_?stkn=Zzl6N2F2MWRqaDh4",
+    "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "donde": [
+      "Barra",
+      "Nos acompañan",
+      "Tarjeta en las notas"
+    ],
+    "titulo": "TERAPIA OCUPACIONAL",
+    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-02 at 16.31.08.jpeg",
+    "logo": "/somosrevista/images/WhatsApp Image 2026-10-02 at 16.31.08-1.jpeg",
+    "boton": "Turnos y consultas:",
+    "enlace": "https://wa.link/fx5t5o",
+    "hasta": "2026-10-03"
   }
 ]
