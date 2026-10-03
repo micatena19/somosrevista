@@ -6,7 +6,8 @@
     "texto": "Accesorios de campo con estilo\nCintos y pañuelos\nDiseños propios",
     "imagen": "/somosrevista/images/Screenshot_20261002_102330_Instagram-1.jpg",
     "boton": "Más información",
-    "enlace": "https://www.instagram.com/alma.criolla__?stkn=MWlsa3F2aHVmNHZwZw=="
+    "enlace": "https://www.instagram.com/alma.criolla__?stkn=MWlsa3F2aHVmNHZwZw==",
+    "hasta": "2026-11-01"
   },
   {
     "activo": true,
@@ -14,7 +15,8 @@
     "titulo": "LOS MONITOS",
     "texto": "Delicias caseras - mesas dulces - servicio de catering",
     "imagen": "/somosrevista/images/7_20260903_175052_0002-1.png",
-    "enlace": "https://www.instagram.com/reposterialosm_?stkn=MWpxZmRlNXQ1YXA3dg=="
+    "enlace": "https://www.instagram.com/reposterialosm_?stkn=MWpxZmRlNXQ1YXA3dg==",
+    "hasta": "2026-11-01"
   },
   {
     "activo": true,
@@ -23,7 +25,8 @@
     "texto": "Espacios individuales y grupales para adolescentes y jóvenes\n\nLic. en Terapia Ocupacional\nM. Roberta Bariani",
     "imagen": "/somosrevista/images/Screenshot_20261002_155340_Gallery-1.jpg",
     "boton": "Turnos y consultas:",
-    "enlace": "https://wa.link/pbamtf"
+    "enlace": "https://wa.link/pbamtf",
+    "hasta": "2026-11-01"
   },
   {
     "activo": true,
@@ -32,6 +35,16 @@
     "texto": "Espacios individuales y grupales para adolescentes y jóvenes\n\nLic. en Terapia Ocupacional\nM. Roberta Bariani",
     "imagen": "/somosrevista/images/IMG-20261002-WA0110.jpg",
     "boton": "Turnos y consultas:",
-    "enlace": "https://wa.link/pbamtf"
+    "enlace": "https://wa.link/pbamtf",
+    "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "donde": "Ventana y barra",
+    "titulo": "Tu estilo",
+    "texto": "Tienda y peluquería | Cristina Garino | Antonio Carboni",
+    "imagen": "/somosrevista/images/WhatsApp Image 2026-10-03 at 18.04.05-1.jpeg",
+    "boton": "Enviar mensaje",
+    "hasta": "2026-11-01"
   }
 ]
