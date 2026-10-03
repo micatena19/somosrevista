@@ -100,10 +100,11 @@ content:
         label: Mostrar este anuncio en el sitio
         type: boolean
       - name: donde
-        label: ¿Dónde se muestra?
+        label: ¿Dónde se muestra? (si no elegís ninguno, sale en todos)
         type: select
         options:
-          values: [Ventana y barra, Solo ventana, Solo barra]
+          multiple: true
+          values: [Ventana emergente, Barra, Nos acompañan, Tarjeta en las notas]
       - name: titulo
         label: Título
         type: string
@@ -112,6 +113,11 @@ content:
         type: text
       - name: imagen
         label: Imagen o afiche (cualquier tamaño)
+        type: image
+        options:
+          media: imagenes
+      - name: logo
+        label: Logo del anunciante (para "Nos acompañan", opcional)
         type: image
         options:
           media: imagenes
