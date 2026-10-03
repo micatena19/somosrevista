@@ -22,6 +22,7 @@
       <li><a href="index.html#nosotros">Sobre SOMOS</a></li>
     </ul>
   </div>
+  <div class="container" id="barra-anuncio"></div>
 </nav>
 <main class="nota-pagina" id="nota"><p>Cargando nota…</p></main>
 <footer><div class="container">SOMOS • LA REVISTA LOCAL • HECHA POR Y PARA NUESTRA ZONA</div></footer>
@@ -51,10 +52,9 @@ const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.n
       return '<p>' + esc(b).replace(/\n/g, '<br>') + '</p>';
     }).join('');
     parrafos += fotos.map((f, i) => usadas.has(i) || !f.imagen ? '' : fig(f)).join('');
-    el.innerHTML = '<div id="barra-anuncio"></div>' + (n.imagen ? `<img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">` : '') +
+    el.innerHTML = (n.imagen ? `<img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">` : '') +
       `<div class="nota-cat">${esc(n.categoria)} · Edición #${esc(e.numero)}</div><h1>${esc(n.titulo)}</h1>${n.subtitulo ? `<p class="bajada">${esc(n.subtitulo)}</p>` : ''}${parrafos}` +
       `<a href="${back}" class="btn btn-outline volver">← Volver a la edición</a>`;
-    barraAnuncio();
   } catch (err) {
     el.innerHTML = `<p>No encontramos esa nota.</p><a href="${back}" class="btn btn-outline volver">← Volver</a>`;
   }
