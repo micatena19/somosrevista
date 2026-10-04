@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOMOS - Revista local de Antonio Carboni y la zona</title>
-<meta name="description" content="SOMOS es la revista local con historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.">
+<title>SOMOS - Revista rural de Antonio Carboni y la zona</title>
+<meta name="google-site-verification" content="fI-RwMjSkTj6nxa3U_C-xb0-NPNec0HfRfJ3nPQOZGA" />
+<meta name="description" content="SOMOS es una revista rural: historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "SOMOS - Revista rural", "alternateName": ["Revista rural SOMOS", "Revista SOMOS", "SOMOS la revista local"], "url": "https://micatena19.github.io/somosrevista/", "inLanguage": "es-AR", "description": "SOMOS es una revista rural: historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.", "publisher": {"@type": "Organization", "name": "SOMOS", "sameAs": ["https://instagram.com/somosrevistta"]}}</script>
 <link rel="canonical" href="https://micatena19.github.io/somosrevista/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
-<meta property="og:site_name" content="SOMOS - La revista local">
-<meta property="og:title" content="SOMOS - La revista local">
-<meta property="og:description" content="SOMOS es la revista local con historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.">
+<meta property="og:site_name" content="SOMOS - Revista rural">
+<meta property="og:title" content="SOMOS - Revista rural">
+<meta property="og:description" content="SOMOS es una revista rural: historias, personas, emprendimientos y recuerdos de Antonio Carboni y nuestros pueblos.">
 <meta property="og:url" content="https://micatena19.github.io/somosrevista/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +43,7 @@
     <div>
       <h1 class="hero-title">somos</h1>
       <div class="hero-subtitle">La revista local</div>
-      <p class="hero-description">Historias, personas, emprendimientos, recuerdos y todo eso que forma parte de nuestros pueblos.</p>
+      <p class="hero-description">Revista rural. Historias, personas, emprendimientos, recuerdos y todo eso que forma parte de nuestros pueblos.</p>
       <div class="hero-buttons">
         <a href="#ediciones" class="btn btn-black">Ver Ediciones</a>
         <a href="#participa" class="btn btn-outline">Participá</a>
@@ -71,6 +73,10 @@
   </div>
 </section>
 
+<section class="notas-section" id="suscribite" hidden>
+  <div class="container duo-grid" id="suscribite-cajas"></div>
+</section>
+
 <section class="ediciones-archivo" id="auspiciantes" hidden>
   <div class="container">
     <div class="section-header"><h2 class="section-title">Nos acompañan</h2><div class="divider"></div></div>
@@ -92,7 +98,7 @@
     </div>
     <div class="duo-box light" id="nosotros">
       <h3>SOBRE SOMOS</h3>
-      <p>Una revista hecha desde nuestra zona, para mostrar lo que muchas veces no se ve, pero nos define como comunidad. Recuperamos la memoria local y el valor de nuestra gente.</p>
+      <p>SOMOS es una revista rural hecha desde nuestra zona, para mostrar lo que muchas veces no se ve, pero nos define como comunidad. Recuperamos la memoria local y el valor de nuestra gente.</p>
     </div>
   </div>
 </section>
@@ -112,7 +118,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
     <article class="card-edicion">
       <div class="card-edicion-top"><h4>somos</h4><span>#${esc(e.numero)} · ${esc(e.fecha)}</span></div>
       <div class="tagline">La revista local</div>
-      <img src="${esc(e.portada)}" alt="Edición ${esc(e.numero)}">
+      ${e.portada ? `<img src="${esc(e.portada)}" alt="Edición ${esc(e.numero)}">` : ''}
       <a href="edicion.html?e=${encodeURIComponent(e.numero)}" class="btn btn-black" style="display:block;text-align:center">Leer Edición →</a>
     </article>`).join('') || '<p class="vacio">Pronto vas a poder leer nuestras ediciones.</p>';
 })();
