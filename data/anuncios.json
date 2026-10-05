@@ -119,5 +119,12 @@
     "titulo": "LO DE CANDÍA",
     "texto": "16/10 - 21hs. PEÑA FOLKLÓRICA. Servicio de cantina. Entradas $10.000",
     "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "LA QUÍMICA DEL VINO",
+    "boton": "Enviar mensaje",
+    "enlace": "https://wa.link/s7iek5",
+    "hasta": "2026-11-01"
   }
 ]
