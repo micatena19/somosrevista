@@ -113,7 +113,7 @@ if (window.QRCode) new QRCode(document.getElementById("qr"), {text: ESTACION_URL
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 (async () => {
   let ed = [];
-  try { ed = (await (await fetch('data/ediciones.json?v=' + Date.now())).json()).reverse(); } catch (e) {}
+  try { ed = (await (await fetch('data/ediciones.json?v=' + Date.now())).json()).filter(x => !x.borrador).reverse(); } catch (e) {}
   document.getElementById('ediciones-grid').innerHTML = ed.map(e => `
     <article class="card-edicion">
       <div class="card-edicion-top"><h4>somos</h4><span>#${esc(e.numero)} · ${esc(e.fecha)}</span></div>
