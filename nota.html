@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SOMOS - La revista local</title>
+<meta name="description" content="Una nota de SOMOS, la revista rural de Antonio Carboni y la zona: historias, personas y emprendimientos de nuestros pueblos.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
@@ -36,25 +37,36 @@ const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.n
   const el = document.getElementById('nota');
   const back = 'edicion.html?e=' + encodeURIComponent(q('e') || '');
   try {
-    const e = (await cargar()).find(x => String(x.numero) === q('e'));
+    const e = (await cargar()).find(x => String(x.numero) === q('e') && !x.borrador);
     const n = (e.notas || []).find(x => slug(x.titulo) === q('n'));
     if (!n) throw 0;
     document.title = n.titulo + ' · SOMOS';
     const fig = f => `<figure><img src="${esc(f.imagen)}" alt="${esc(f.pie || n.titulo)}">${f.pie ? `<figcaption>${esc(f.pie)}</figcaption>` : ''}</figure>`;
     const fotos = n.fotos || [], usadas = new Set();
-    const bloques = String(n.texto || '').replace(/[\[\(]\s*(?:foto|imagen)\s*n?[°º.]?\s*(\d+)\s*[\]\)]/gi, '\n\n[foto $1]\n\n').replace(/^(>[^\n]*(?:\n>[^\n]*)*)$/gm, '\n\n$1\n\n').replace(/^(##[^\n]*)$/gm, '\n\n$1\n\n').replace(/^(- [^\n]*(?:\n- [^\n]*)*)$/gm, '\n\n$1\n\n').split(/\n\s*\n/).map(b => b.trim()).filter(Boolean);
-    let parrafos = bloques.map(b => {
-      const m = b.match(/^\[foto\s*(\d+)\]$/i);
-      if (m) { const f = fotos[m[1] - 1]; if (f && f.imagen) { usadas.add(m[1] - 1); return fig(f); } return ''; }
-      if (b.startsWith('## ')) return '<h2>' + esc(b.slice(3)) + '</h2>';
-      if (b.startsWith('>')) return '<blockquote>' + esc(b.replace(/^>[ \t]*/gm, '')).replace(/\n/g, '<br>') + '</blockquote>';
-      if (b.startsWith('- ')) return '<ul>' + b.split('\n').map(l => '<li>' + esc(l.replace(/^- ?/, '')) + '</li>').join('') + '</ul>';
-      return '<p>' + esc(b).replace(/\n/g, '<br>') + '</p>';
+    const marca = s => s.replace(/[\[\(]\s*(?:foto|imagen)\s*n?[°º.]?\s*(\d+)\s*[\]\)]/gi, '\n\n[foto $1]\n\n');
+    const bloques = [];
+    marca(String(n.texto || '')).replace(/^(##[^\n]*)$/gm, '\n\n$1\n\n').split(/\n\s*\n/).forEach(b => {
+      const ls = b.trim().split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+      if (!ls.length) return;
+      const i = ls.findIndex(l => l.startsWith('>'));
+      if (i > 0) { bloques.push(ls.slice(0, i)); bloques.push(ls.slice(i)); } else bloques.push(ls);
+    });
+    let parrafos = bloques.map(ls => {
+      const b = ls[0], m = b.match(/^\[foto\s*(\d+)\]$/i);
+      if (m && ls.length === 1) { const f = fotos[m[1] - 1]; if (f && f.imagen) { usadas.add(m[1] - 1); return fig(f); } return ''; }
+      if (b.startsWith('## ')) return '<h2>' + esc(b.slice(3)) + '</h2>' + (ls.length > 1 ? '<p>' + ls.slice(1).map(esc).join(' ') + '</p>' : '');
+      if (b.startsWith('>')) return '<blockquote>' + ls.map(l => l.replace(/^>\s*/, '')).filter(Boolean).reduce((a, l) => a ? a + (/^[—–]/.test(l) ? '<br>' : ' ') + esc(l) : esc(l), '') + '</blockquote>';
+      if (/^[-*•]\s+/.test(b)) return '<ul>' + ls.map(l => '<li>' + esc(l.replace(/^[-*•]\s*/, '')) + '</li>').join('') + '</ul>';
+      if (ls.length === 1 && b.length > 2 && b.length <= 60 && b === b.toUpperCase() && b !== b.toLowerCase() && !/[.:]$/.test(b)) return '<h2>' + esc(b) + '</h2>';
+      return '<p>' + ls.map(esc).join(' ') + '</p>';
     }).join('');
     parrafos += fotos.map((f, i) => usadas.has(i) || !f.imagen ? '' : fig(f)).join('');
     el.innerHTML = (n.imagen ? `<img src="${esc(n.imagen)}" alt="${esc(n.titulo)}">` : '') +
       `<div class="nota-cat">${esc(n.categoria)} · Edición #${esc(e.numero)}</div><h1>${esc(n.titulo)}</h1>${n.subtitulo ? `<p class="bajada">${esc(n.subtitulo)}</p>` : ''}${parrafos}` +
+      `<div class="compartir"><b>Compartir:</b> <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(n.titulo + ' - SOMOS ' + location.href)}">WhatsApp</a> <button class="btn btn-outline" id="copiar">Copiar link</button></div>` +
       `<a href="${back}" class="btn btn-outline volver">← Volver a la edición</a>`;
+    const cp = document.getElementById('copiar');
+    cp.onclick = () => navigator.clipboard.writeText(location.href).then(() => cp.textContent = '¡Copiado!').catch(() => {});
   } catch (err) {
     el.innerHTML = `<p>No encontramos esa nota.</p><a href="${back}" class="btn btn-outline volver">← Volver</a>`;
   }
