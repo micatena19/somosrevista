@@ -1,5 +1,6 @@
 [
   {
+    "borrador": true,
     "numero": "01",
     "fecha": "Junio 2026",
     "portada": "/somosrevista/images/Screenshot_20261001_153714_Gallery.jpg",
@@ -50,6 +51,7 @@
     ]
   },
   {
+    "borrador": true,
     "numero": "02",
     "fecha": "Agosto 2026",
     "portada": "/somosrevista/images/somos_20260812_195108_0000.png",
@@ -109,6 +111,7 @@
     ]
   },
   {
+    "borrador": true,
     "numero": "03",
     "fecha": "Octubre 2026",
     "notas": [
@@ -119,5 +122,10 @@
         "texto": "La Lechonada: una fiesta de todos\n\nLa Lechonada nació con la idea de recuperar una celebración que acompañara el aniversario de Antonio Carboni. La fiesta tuvo sus primeras ediciones en 2010 y 2016, y el año pasado, desde el Club Social, Deportivo y Cultural Antonio Carboni, se decidió volver a convocar a las instituciones de la localidad.\n\nEl objetivo es que sea una verdadera fiesta popular, donde puedan participar vecinos, instituciones, productores, comerciantes, artesanos y emprendedores, y que con el tiempo se convierta en una fiesta que identifique a Carboni.\n\nEste año habrá un acto por el aniversario, desfile de instituciones, propuestas gastronómicas, paseo de compras, visitas guiadas a la Parroquia La Sagrada Familia y al histórico reloj francés de su torre.\n\nTambién habrá peñas folklóricas, música, sorteos y diferentes espectáculos, con Los Charros como cierre.\n\nLa Lechonada representa una oportunidad para reencontrarse, compartir y mostrar todo lo que tiene para ofrecer nuestra comunidad. Su realización es posible gracias al trabajo conjunto de las instituciones, el Municipio, sponsors, vecinos y productores locales.\n\nFuente: Darío Gutiérrez."
       }
     ]
+  },
+  {
+    "borrador": true,
+    "numero": "03",
+    "fecha": "Octubre 2026"
   }
 ]
