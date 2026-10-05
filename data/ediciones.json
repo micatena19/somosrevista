@@ -1,6 +1,6 @@
 [
   {
-    "borrador": true,
+    "borrador": false,
     "numero": "01",
     "fecha": "Junio 2026",
     "portada": "/somosrevista/images/Screenshot_20261001_153714_Gallery.jpg",
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "borrador": true,
+    "borrador": false,
     "numero": "02",
     "fecha": "Agosto 2026",
     "portada": "/somosrevista/images/somos_20260812_195108_0000.png",
