@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SOMOS - La revista local</title>
+<meta name="description" content="Leé una edición de SOMOS, la revista rural de Antonio Carboni y la zona: notas, historias y emprendimientos de nuestros pueblos.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
@@ -37,7 +38,7 @@ const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.n
 (async () => {
   const el = document.getElementById('edicion');
   try {
-    const e = (await cargar()).find(x => String(x.numero) === q('e'));
+    const e = (await cargar()).find(x => String(x.numero) === q('e') && !x.borrador);
     if (!e) throw 0;
     document.title = 'Edición ' + e.numero + ' · SOMOS';
     const pdf = e.archivo || e.enlace;
@@ -52,14 +53,15 @@ const cargar = async () => (await (await fetch('data/ediciones.json?v=' + Date.n
       </article>`).join('');
     el.innerHTML = `
       <div class="edicion-head">
-        <img src="${esc(e.portada)}" alt="Edición ${esc(e.numero)}">
+        ${e.portada ? `<img src="${esc(e.portada)}" alt="Edición ${esc(e.numero)}">` : ''}
         <div>
           <h2 class="section-title">Edición #${esc(e.numero)}</h2>
           <div class="divider"></div>
           <p class="hero-description">${esc(e.fecha)} · La revista local</p>
-          ${pdf ? `<a href="${esc(pdf)}" target="_blank" rel="noopener" class="btn btn-outline">Ver revista completa (PDF)</a>` : ''}
+          ${pdf ? `<a href="${esc(pdf)}" target="_blank" rel="noopener" class="btn btn-black">Abrir en pantalla completa</a> ${e.archivo ? `<a href="${esc(e.archivo)}" download class="btn btn-outline">Descargar PDF</a>` : ''}` : ''}
         </div>
       </div>
+      ${e.archivo ? `<div class="lector"><iframe src="${esc(e.archivo)}" title="Edición ${esc(e.numero)}"></iframe></div>` : ''}
       <div class="section-header"><h2 class="section-title">En esta edición</h2><div class="divider"></div></div>
       <div class="notas-grid">${notas || '<p class="vacio">Pronto vas a poder leer las notas de esta edición.</p>'}</div>`;
     tarjetaAnuncio();
