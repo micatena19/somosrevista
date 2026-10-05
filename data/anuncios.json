@@ -147,5 +147,13 @@
     "imagen": "/somosrevista/images/horizonte.jpeg",
     "enlace": "https://wa.link/s3nekg",
     "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "ALAMBRADOS \"EL MATE AMARGO\"",
+    "texto": "Juan Cruz Bressan",
+    "boton": "Enviar mensaje",
+    "enlace": "https://wa.link/w969cq",
+    "hasta": "2026-11-01"
   }
 ]
