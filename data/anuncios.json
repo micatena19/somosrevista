@@ -105,5 +105,11 @@
     "imagen": "/somosrevista/images/Screenshot_20261005_120232_Instagram.jpg",
     "enlace": "https://www.instagram.com/alma.criolla__?stkn=YXlzbnRiMHF1Z3Jr",
     "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "LA ESQUINA DE ELVIRA ",
+    "texto": "Ropa de campo, talabartería, productos de veterinaria básicos y alimento para mascotas.",
+    "hasta": "2026-10-05"
   }
 ]
