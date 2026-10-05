@@ -155,7 +155,16 @@
       {
         "titulo": "Ernestina: un pueblo que se vistió de gala",
         "categoria": "Somos historia",
-        "texto": "Ernestina es uno de esos pueblos que parecen guardar el paso del tiempo entre sus calles, sus edificios y las historias que todavía viven en la memoria de sus habitantes. En 1925, el pequeño pueblo se vistió de gala para recibir una visita que quedaría para siempre en su historia: la llegada del Príncipe de Gales.\n\nPara aquella ocasión tan especial, el boulevard fue asfaltado y los pobladores se prepararon para recibir a una de las figuras más importantes de la época. Las calles se llenaron de movimiento, los vecinos se vistieron especialmente para la ocasión y Ernestina mostró, con orgullo, todo lo que tenía para ofrecer.\n\nHoy, 101 años después de aquella visita, muchas cosas cambiaron, pero otras parecen haberse quedado detenidas en aquel momento. Los edificios continúan en pie, conservando parte de aquella arquitectura que caracteriza al pueblo. Las palmeras del boulevard crecieron y se hicieron mucho más altas, convirtiéndose en verdaderas testigos silenciosas de todo lo que ocurrió a su alrededor.\n\nLa iglesia, imponente, sigue ocupando un lugar especial dentro del paisaje de Ernestina. También el Teatro Argentino, con su historia y su fachada, recuerda que alguna vez este pequeño pueblo fue escenario de acontecimientos que trascendieron sus propias calles.\n\n[foto 1]\n\n[foto 2]\n\nInformación aportada por: Leticia Echenique."
+        "imagen": "/somosrevista/images/IMG-20261003-WA0080.jpg",
+        "texto": "Ernestina es uno de esos pueblos que parecen guardar el paso del tiempo entre sus calles, sus edificios y las historias que todavía viven en la memoria de sus habitantes. En 1925, el pequeño pueblo se vistió de gala para recibir una visita que quedaría para siempre en su historia: la llegada del Príncipe de Gales.\n\nPara aquella ocasión tan especial, el boulevard fue asfaltado y los pobladores se prepararon para recibir a una de las figuras más importantes de la época. Las calles se llenaron de movimiento, los vecinos se vistieron especialmente para la ocasión y Ernestina mostró, con orgullo, todo lo que tenía para ofrecer.\n\nHoy, 101 años después de aquella visita, muchas cosas cambiaron, pero otras parecen haberse quedado detenidas en aquel momento. Los edificios continúan en pie, conservando parte de aquella arquitectura que caracteriza al pueblo. Las palmeras del boulevard crecieron y se hicieron mucho más altas, convirtiéndose en verdaderas testigos silenciosas de todo lo que ocurrió a su alrededor.\n\nLa iglesia, imponente, sigue ocupando un lugar especial dentro del paisaje de Ernestina. También el Teatro Argentino, con su historia y su fachada, recuerda que alguna vez este pequeño pueblo fue escenario de acontecimientos que trascendieron sus propias calles.\n\n[foto 1]\n\n[foto 2]\n\nInformación aportada por: Leticia Echenique.",
+        "fotos": [
+          {
+            "imagen": "/somosrevista/images/teatro ernestina.jpeg"
+          },
+          {
+            "imagen": "/somosrevista/images/iglesia ernestina.jpeg"
+          }
+        ]
       }
     ]
   }
