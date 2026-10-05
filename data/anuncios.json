@@ -139,5 +139,10 @@
     "imagen": "/somosrevista/images/myf forrajes-1.jpeg",
     "enlace": "https://wa.link/q2athh",
     "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "HORIZONTE AUTOSERVICIO",
+    "hasta": "2026-11-01"
   }
 ]
