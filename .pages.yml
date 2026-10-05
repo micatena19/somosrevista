@@ -18,6 +18,10 @@ content:
     format: json
     list: true
     fields:
+      - name: borrador
+        label: Borrador - NO mostrar esta edición en el sitio todavía (destildalo para publicar todo junto)
+        type: boolean
+        default: true
       - name: numero
         label: Número (ej. 03)
         type: string
@@ -130,3 +134,19 @@ content:
       - name: hasta
         label: Mostrar hasta el día (opcional, después se oculta solo)
         type: date
+
+  - name: ajustes
+    label: Ajustes (suscripción y socios)
+    type: file
+    path: data/config.json
+    format: json
+    fields:
+      - name: suscripcion_url
+        label: Link del formulario de suscripción (Brevo)
+        type: string
+      - name: socios_url
+        label: Link del plan de socios (Mercado Pago)
+        type: string
+      - name: socios_texto
+        label: Texto del plan de socios
+        type: text
