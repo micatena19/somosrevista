@@ -80,5 +80,13 @@
     "boton": "Enviar mensaje",
     "enlace": "https://wa.link/7sqnmu",
     "hasta": "2026-11-01"
+  },
+  {
+    "activo": true,
+    "titulo": "ZINGUERÍA - FERNANDO MELIET",
+    "imagen": "/somosrevista/images/file_000000003a6c820e9a3a760c79667c19-1.png",
+    "logo": "/somosrevista/images/file_000000003a6c820e9a3a760c79667c19-2.png",
+    "boton": "Enviar mensaje",
+    "hasta": "2026-11-01"
   }
 ]
